@@ -51,6 +51,7 @@ package Utils
 			if(style == "cellRender"){
 				styleDic["cellRender"] = value;
 			}
+			layout();
 		}
 		/**
 		 * 布局

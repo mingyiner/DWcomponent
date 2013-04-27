@@ -66,7 +66,7 @@ package Utils
 				rowNum +=1;
 			}
 			//开始平铺
-			if(!styleDic["cellRender"]){
+			if(!styleDic["cellRender"] || itemList.length!=0){
 				return;
 			}
 			for (var i:int = 0; i < rowNum; i++) 
