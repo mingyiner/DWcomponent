@@ -47,6 +47,9 @@ package Utils
 		 */		
 		override public function layout():void{
 			
+			if(!styleDic["cellRender"] || itemList.length!=0){
+				return;
+			}
 			//计算出每行排多少
 			if(columnWidth <= 0){
 				columnWidth = this.width;
@@ -66,9 +69,6 @@ package Utils
 				rowNum +=1;
 			}
 			//开始平铺
-			if(!styleDic["cellRender"] || itemList.length!=0){
-				return;
-			}
 			for (var i:int = 0; i < rowNum; i++) 
 			{
 				for (var j:int = 0; j < columnNum; j++) 

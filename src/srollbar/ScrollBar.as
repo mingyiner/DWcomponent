@@ -59,6 +59,7 @@ package srollbar
 		private var direct:int = 1;
 		private var tid:int;
 		private var ui:MovieClip;
+		private var isButtonDown:Boolean;
 		public function ScrollBar(ui:MovieClip)
 		{
 			super();
@@ -100,39 +101,47 @@ package srollbar
 		{
 			if(event.currentTarget == upButton){
 				this.direct = UP;
-				var tid:int = setTimeout(function():void{
-					clearTimeout(tid);
-					continueScroll();
-				},500);
 			}
 			if(event.currentTarget == downButton){
 				this.direct = DOWN;
 			}
-			ui.stage.addEventListener(MouseEvent.MOUSE_UP,function():void{
+			isButtonDown = true;
+			doScroll();
+			var aa:int = setTimeout(function():void{
+				clearTimeout(aa);
+				continueScroll();
+			},500);
+			
+			ui.stage.addEventListener(MouseEvent.MOUSE_UP,function(event:MouseEvent):void{
+				event.currentTarget.removeEventListener(event.type,arguments.callee);
+				isButtonDown = false;
 				clearInterval(tid);
+				clearTimeout(aa);
 			});
-			//开始滚动
-			doScroll()
 		}
 		private function continueScroll():void{
 			tid = setInterval(doScroll,50);
 		}
 		private function doScroll():void
 		{
+			if(!isButtonDown){
+				return;
+			}
 			//如果向上滚动
-			if(direct == UP){
+			if(direct == UP && isButtonDown){
 				//内容区域 位置 更新
 				content.position -= scrollUnit;
 				//判断是否越界
-				content.position = Math.min(content.position,contentMinPositionY);
+				content.position = Math.max(content.position,contentMinPositionY);
 			}
 			//向下滚动
-			if(direct == DOWN){
+			if(direct == DOWN && isButtonDown){
 				content.position += scrollUnit;
 				content.position = Math.min(content.position,contentMaxPostionY);
 			}
 			//更新滑块
 			upDataThumbPostion();
+			trace("执行到这儿了");
 		}
 		
 		public function setContent(value:IScrollView,unit:int):void{
@@ -142,26 +151,31 @@ package srollbar
 			getContentY();
 		}
 		private function getContentY():void{
-			trace(content.contentTotalHeight);
 			contentMaxPostionY = content.contentTotalHeight - content.winHeight;
 			contentMinPositionY = content.minY;
+			contentMaxPostionY = Math.max(contentMaxPostionY,contentMinPositionY);
+			
 			upDate();
 		}
 		public function upDate():void{
-			upDateHeight();
 			upDateButtonYAndThumb();
+			upDateHeight();
 			thumbGotoFirst()
 		}
 		public function upDateHeight():void{
 			if(content.contentTotalHeight <= content.winHeight){
-				this.visible = false;
+				this.ui.visible = false;
 				content.position = 0;
 			}else{
-				this.visible = true;
+				this.ui.visible = true;
 				//计算滑块的高 
 				var thumbH:int = thumbCanScrollY*content.winHeight/content.contentTotalHeight;
 				//滑块高  最小是15
 				thumbH = Math.max(thumbH,15);
+				updateThumbHeight(thumbH);
+				if(content.position > contentMaxPostionY){
+					thumbGotoEnd();
+				}
 			}
 		}
 		//设置滚动条的高
@@ -180,13 +194,21 @@ package srollbar
 			thumbMinY = upButton.height;
 		}
 		private function upDataThumbPostion():void{
-			var thumbY:int = (thumbMaxY - thumbMinY)*content.position/(contentMaxPostionY - contentMinPositionY);
-			thumbButton.y = Math.max(Math.min(thumbY,thumbMinY));
+			var thumbY:int = thumbMinY+(thumbMaxY - thumbMinY)*content.position/(contentMaxPostionY - contentMinPositionY);
+			thumbButton.y = Math.min(Math.max(thumbY,thumbMinY),thumbMaxY);
 		}
 		
 		private function thumbGotoFirst():void{
 			thumbButton.y = thumbMinY;
 			content.position = contentMinPositionY;
+		}
+		private function thumbGotoEnd():void{
+			thumbButton.y = thumbMaxY;
+			content.position =contentMaxPostionY;
+		}
+		private function updateThumbHeight(h:int):void{
+			this.thumbButton.height = h;
+			upDateButtonYAndThumb();
 		}
 	}
 	

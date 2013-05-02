@@ -19,13 +19,17 @@ package
 		private function intMc():void
 		{
 			tf = new TextField();
+			tf.width =24;
+			tf.height = 16;
+			tf.y =  18;
+			tf.x = 18;
 			addChild(tf);
 		}
 		
 		private function drawBall():void
 		{
 			this.graphics.beginFill(0xcc0000,1);
-			this.graphics.drawCircle(0,0,25);
+			this.graphics.drawCircle(25,25,25);
 			this.graphics.endFill();
 		} 
 		public function set data(value:Object):void{

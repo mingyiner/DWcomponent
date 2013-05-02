@@ -5,6 +5,10 @@ package
 	
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
+	import flash.utils.clearInterval;
+	import flash.utils.setInterval;
+	import flash.utils.setTimeout;
 	
 	import srollbar.ScrollBar;
 	import srollbar.ScrollBarManager;
@@ -16,17 +20,15 @@ package
 		private var scrollUI:MovieClip;
 		public function DWComponent()
 		{
-			tileList = new DWTileList();
-			tileList.x =25;
-			tileList.y = 25;			
+			tileList = new DWTileList();		
 			
 			tileList._cellWidth = 50;
 			tileList.rowHeight = 50
-			tileList.setSize(206,300);
+			tileList.setSize(206,500);
 			tileList.setStyle("horizontalGap",2);
 			tileList.setStyle("cellRender",Ball);
 			var arr:Array = [];
-			for (var i:int = 0; i < 24; i++) 
+			for (var i:int = 0; i < 40; i++) 
 			{
 				arr.push(i);
 			}
@@ -39,6 +41,9 @@ package
 			var scrollBar:ScrollBar = new ScrollBar(scrollUI.scrollBar);
 			var scrollManager:ScrollBarManager = new ScrollBarManager(this,scrollBar,scrollUI.palceHolder);
 			scrollManager.add(tileList);
+			
+			var tid:int = setInterval(function():void{trace("tiemout")},1000);
+			this.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{clearInterval(tid)});
 		}
 	}
 }
