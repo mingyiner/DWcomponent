@@ -41,9 +41,6 @@ package
 			var scrollBar:ScrollBar = new ScrollBar(scrollUI.scrollBar);
 			var scrollManager:ScrollBarManager = new ScrollBarManager(this,scrollBar,scrollUI.palceHolder);
 			scrollManager.add(tileList);
-			
-			var tid:int = setInterval(function():void{trace("tiemout")},1000);
-			this.addEventListener(MouseEvent.CLICK,function(e:MouseEvent):void{clearInterval(tid)});
 		}
 	}
 }
