@@ -6,6 +6,7 @@ package
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
+	import flash.text.TextField;
 	import flash.utils.clearInterval;
 	import flash.utils.setInterval;
 	import flash.utils.setTimeout;
@@ -41,6 +42,20 @@ package
 			var scrollBar:ScrollBar = new ScrollBar(scrollUI.scrollBar);
 			var scrollManager:ScrollBarManager = new ScrollBarManager(this,scrollBar,scrollUI.palceHolder);
 			scrollManager.add(tileList);
+			
+			var i:int = 61222
+			trace(i.toString().split(""));
+			
+			var tf:TextField = new TextField();
+			//tf.text = "455566";
+			tf.htmlText = "<font color = '#cccccc'>45677</font>"
+			tf.y = 400
+			addChild(tf);
+			
+			var s:String = '喵了个咪~.s23';
+			var codeS:String = s.charAt(s.length - 1);
+			var id:int = s.charCodeAt(2);
+			trace(codeS,id +"id");
 		}
 	}
 }
