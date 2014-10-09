@@ -71,5 +71,9 @@ package
 			p.y = minY + Math.random() * (maxY - minY);
 			return p;
 		}
+		//test分支代码
+		public function testbranch():void {
+			
+		}
 	}
 }
