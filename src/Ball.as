@@ -75,5 +75,9 @@ package
 		public function testbranch():void {
 			
 		}
+
+		public function masterAA():void {
+			
+		}
 	}
 }
