@@ -44,5 +44,11 @@ package
 			
 			
 		}
+		public function refresh1():void {
+			
+		}
+		public function refresh2():void {
+			
+		}
 	}
 }
