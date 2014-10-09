@@ -36,8 +36,13 @@ package
 			_data = value;
 			tf.text = String(value)
 		}
+		
 		public function get data():Object{
 			return _data;
+		}
+		public function refresh():void {
+			
+			
 		}
 	}
 }
