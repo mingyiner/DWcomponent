@@ -75,5 +75,8 @@ package
 		public function testbranch():void {
 			
 		}
+		public function branch():void {
+			
+		}
 	}
 }
