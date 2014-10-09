@@ -50,5 +50,9 @@ package
 		public function refresh2():void {
 			
 		}
+		//test分支代码
+		public function testbranch():void {
+			
+		}
 	}
 }
