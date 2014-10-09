@@ -1,5 +1,6 @@
 package
 {
+	import flash.geom.Point;
 	import Utils.ICellRender;
 	
 	import flash.display.Sprite;
@@ -49,6 +50,26 @@ package
 		}
 		public function refresh2():void {
 			
+		}
+		public function masterRefresh():void {
+			
+		}
+		public function masterRefresh1():void {
+			
+		}
+		//四个点中最小横坐标点
+		private var minX:int;
+		//四个点中最大横坐标点
+		private var maxX:int;
+		//四个点中最小纵坐标点
+		private var minY:int;
+		//四个点钟最大纵坐标点
+		private var maxY:int;
+		private function randomPoint():Point {
+			var p:Point = new Point;
+			p.x = minX + Math.random() * (maxX - minX);
+			p.y = minY + Math.random() * (maxY - minY);
+			return p;
 		}
 	}
 }
