@@ -42,11 +42,8 @@ package
 			var minX:int = 10;
 			var maxX:int = 300;
 			var minY:int = 10;
-<<<<<<< HEAD
 			var maxY:int = 1
-=======
 			var maxY:int = 180
->>>>>>> 53c55d0... fenzhi
 			var p:Point = new Point;
 			
 			p.x = minX + Math.random() * (maxX - minX);
@@ -58,7 +55,7 @@ package
 		}
 		private function enterframeHandler(e:Event):void {
 			if (randomPoint() != null) {
-				trace(randomPoint().x,randomPoint().y)
+				//trace(randomPoint().x,randomPoint().y)
 			}
 			
 		}
