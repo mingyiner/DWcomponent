@@ -37,6 +37,7 @@ package
 		
 			addEventListener(Event.ENTER_FRAME,enterframeHandler)
 		}
+		//先随机出所在规则矩形边缘的所有点
 		private function randomPoint():Point {
 			var minX:int = 10;
 			var maxX:int = 300;
@@ -47,13 +48,12 @@ package
 			var maxY:int = 180
 >>>>>>> 53c55d0... fenzhi
 			var p:Point = new Point;
+			
 			p.x = minX + Math.random() * (maxX - minX);
 			p.y = minY + Math.random() * (maxY - minY);
 			
-			if (rectMc.hitTestPoint(p.x,p.y)) {
-				return p
-			}
-			return null;
+			//特殊判断确保在不规则图形内部
+			
 			
 		}
 		private function enterframeHandler(e:Event):void {
