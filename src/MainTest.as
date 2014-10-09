@@ -41,7 +41,11 @@ package
 			var minX:int = 10;
 			var maxX:int = 300;
 			var minY:int = 10;
+<<<<<<< HEAD
 			var maxY:int = 1
+=======
+			var maxY:int = 180
+>>>>>>> 53c55d0... fenzhi
 			var p:Point = new Point;
 			p.x = minX + Math.random() * (maxX - minX);
 			p.y = minY + Math.random() * (maxY - minY);
