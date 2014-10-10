@@ -22,6 +22,10 @@ package
 		public function fixBug():void {
 			
 		}
+		//主分支修改
+		public function masterFix():void {
+			
+		}
 	}
 
 }
