@@ -22,6 +22,11 @@ package
 		public function fixBug():void {
 			
 		}
+		//存储在栈
+		public function statusFun():void {
+			
+		}
+		
 	}
 
 }
