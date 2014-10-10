@@ -15,6 +15,9 @@ package
 		private function init():void {
 			trace("BranchRef已在分支aa初始");
 		}
+		private function useInMaster():void {
+			trace("master use")
+		}
 	}
 
 }
