@@ -18,7 +18,10 @@ package
 		public function init():void {
 			
 		}
-		
+		//修改同一个文件的bug
+		public function fixBug():void {
+			
+		}
 	}
 
 }
