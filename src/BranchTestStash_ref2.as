@@ -22,10 +22,18 @@ package
 		public function fixBug():void {
 			
 		}
+<<<<<<< HEAD
 		//主分支修改
 		public function masterFix():void {
 			
 		}
+=======
+		//存储在栈
+		public function statusFun():void {
+			
+		}
+		
+>>>>>>> a069d46f892abe73396f3f94ca47129d8126559d
 	}
 
 }
