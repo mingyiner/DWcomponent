@@ -59,7 +59,10 @@ package
 			}
 			
 		}
-		
+        //主分支上
+		private function master_branch():void{
+            trace("主分支modify");
+        }
 	}
 
 }
