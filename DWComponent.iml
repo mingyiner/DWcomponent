@@ -2,8 +2,13 @@
 <module type="Flex" version="4">
   <component name="FlexBuildConfigurationManager" active="componet">
     <configurations>
-      <configuration name="componet" main-class="MainTest">
+      <configuration name="componet" main-class="MainTest" output-file="MainTest.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies target-player="11.1">
+          <entries>
+            <entry library-id="1be90001-b687-4380-b018-fc34d46b0d7b">
+              <dependency linkage="Merged" />
+            </entry>
+          </entries>
           <sdk name="4.6.0" />
         </dependencies>
         <compiler-options />
@@ -21,6 +26,16 @@
     </content>
     <orderEntry type="jdk" jdkName="4.6.0" jdkType="Flex SDK Type (new)" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="1be90001-b687-4380-b018-fc34d46b0d7b" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/ui.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

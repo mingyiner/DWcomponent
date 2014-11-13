@@ -51,7 +51,7 @@ package
 			
 			//特殊判断确保在不规则图形内部
 			
-			
+			return p;
 		}
 		private function enterframeHandler(e:Event):void {
 			if (randomPoint() != null) {
