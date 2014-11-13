@@ -2,5 +2,5 @@
 .settings/
 bin-debug/
 .idea/
-DWComponent.iml/
+DWComponent.iml
 .gitignore/
