@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="componet">
+  <component name="FlexBuildConfigurationManager" active="DWComponent">
     <configurations>
-      <configuration name="componet" main-class="MainTest" output-file="MainTest.swf" output-folder="$MODULE_DIR$/bin-debug">
+      <configuration name="DWComponent" main-class="MainTest" output-file="MainTest.swf" output-folder="$MODULE_DIR$/bin-debug">
         <dependencies target-player="11.1">
           <entries>
-            <entry library-id="1be90001-b687-4380-b018-fc34d46b0d7b">
+            <entry library-id="a82f7597-85bf-4fd2-94a6-66ae71495f09">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -28,7 +28,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="1be90001-b687-4380-b018-fc34d46b0d7b" />
+        <properties id="a82f7597-85bf-4fd2-94a6-66ae71495f09" />
         <CLASSES>
           <root url="jar://$MODULE_DIR$/ui.swc!/" />
         </CLASSES>
