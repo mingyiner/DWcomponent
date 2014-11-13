@@ -10,6 +10,7 @@ package
 		public function AA() 
 		{
 			trace("aa");
+            trace("bb");
 		}
 		
 	}
