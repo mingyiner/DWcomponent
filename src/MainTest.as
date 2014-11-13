@@ -53,6 +53,7 @@ package
 			
 			return p;
 		}
+
 		private function enterframeHandler(e:Event):void {
 			if (randomPoint() != null) {
 				//trace(randomPoint().x,randomPoint().y)
@@ -62,6 +63,11 @@ package
         //主分支上
 		private function master_branch():void{
             trace("主分支modify");
+            trace("aa breach modify this File");
+            trace("");
+        }
+        private function aa_branch_test():void{
+            trace("aa分支test");
         }
 	}
 
